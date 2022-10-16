@@ -1,0 +1,5 @@
+https://opentdb.com/api.php?amount=10
+
+
+touch style.css
+rm style.css
