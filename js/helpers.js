@@ -10,20 +10,20 @@ export const createQuestion = (question, questionElm) => {
   let q = "<p>" + question.question + "</p>";
   let randomNumber = getRandomNumber(0, 3);
 
-  let options = "<ul class='list-unstyled'>";
+  let options = "<ul class='list-unstyled d-flex flex-column'>";
 
   let incorrect_answers = [0, 1, 2];
   for (let index = 0; index < 4; index++) {
     if (index === randomNumber) {
       options +=
-        "<li class='bg-danger cp m-2' id='correct'>" +
+        "<button class='border cp m-2' id='correct'>" +
         question.correct_answer +
-        "</li>";
+        "</button>";
     } else {
       options +=
-        "<li class='bg-info cp m-2 wrong'>" +
+        "<button class='border cp m-2 wrong'>" +
         question.incorrect_answers[incorrect_answers[0]] +
-        "</li>";
+        "</button>";
       incorrect_answers.shift();
     }
   }
